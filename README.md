@@ -15,4 +15,4 @@ Minden szinten kicsit másabb a kihívás.
 ### Nehéz szint: Random kiindulás, és véletlen 10-20 másodperc között fel-le fordulnak random menniségben a csempék.
 
 #### Ha sikerül teljesíteni egy szinten a kihívást, akkor a legutolsó szerzett pontszám látszódik majd a ranglistán. Egy bizonyos névvel mindig csak a legutolsó elér pontszám látható.
-** Minél kevesebb lépést tettél, annál kevesebb pontod van, tehát annál feljebb leszel a ranglistán **
+* Minél kevesebb lépést tettél, annál kevesebb pontod van, tehát annál feljebb leszel a ranglistán *
