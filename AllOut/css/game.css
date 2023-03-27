@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background-color: #1a191a;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* CONTAINER START */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    margin: auto
+}
+
+.container .card {
+    position: relative;
+    min-width: 45rem;
+    height: 55rem;
+    border-radius: 15px;
+    margin: 30px;
+}
+
+.container .card .box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2a2b2f;
+    border: 2px solid #1e1f23;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.container .card .box .content {
+    padding: 20px;
+    text-align: center;
+}
+
+.container .card .box .content p {
+    padding: 10px;
+    color: white;
+    font-size: 12px;
+    z-index: 1;
+    margin-top: 1rem;
+}
+
+.container .card .box .content h3 {
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.8);
+    z-index: 1;
+    transition: 0.5s;
+    font-weight: 900;
+}
+
+.container .card:hover .box .content h3 {
+    color: rgba(255, 255, 255, 1);
+}
+
+.container .card .box .content a {
+    position: relative;
+    display: block;
+    padding: 12px 0.1px;
+    background: #e0a21c;
+    margin-top: 3rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 400;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    transition: 0.8s;
+}
+
+.container .card .box .content a:hover {
+    transform: scale(1.1);
+    border-radius: 2rem;
+    background: #e0a21cf3;
+    color: black;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* CONTAINER END */
+
+/* NAME FORM START */
+
+.form {
+    --width-of-input: 200px;
+    --border-height: 1px;
+    --border-before-color: rgba(221, 221, 221, 0.39);
+    --border-after-color: #e0a21c;
+    --input-hovered-color: #4985e01f;
+    position: relative;
+    width: var(--width-of-input);
+}
+
+/* styling of Input */
+.input {
+    color: #fff;
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+    border-bottom: var(--border-height) solid var(--border-before-color);
+    transition: ease 0.5s;
+}
+
+.input-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+input:hover {
+    transform: scale(1.05);
+}
+
+input:focus {
+    outline: none;
+}
+
+input:focus~.input-border {
+    width: 100%;
+}
+
+/* NAME FORM START */
+
+/* AUDIO START */
+
+
+.mute-icon {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: white;
+    transition: ease 0.5s;
+
+}
+
+.mute-icon:hover {
+    transform: scale(1.1);
+    color: rgb(212, 208, 208);
+}
+
+.mute-icon i {
+    font-size: 24px;
+}
+
+/* AUDIO END */
+
+.fade-in {
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+.backa {
+    position: relative;
+    display: flex;
+    padding: 12px 25px;
+    background: #e0a21c;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 400;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    transition: 0.8s;
+    text-align: center;
+    width: 35%;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+}
+
+.backa:hover {
+    transform: scale(1.1);
+    border-radius: 2rem;
+    background: #e0a21cf3;
+    color: black;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* GAME containers START */
+#container {
+    background: url(https://play-lh.googleusercontent.com/VSwHQjcAttxsLE47RuS4PqpC4LT7lCoSjE7Hx5AW_yCxtDvcnsHHvm5CTuL5BPN-uRTP);
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    background-position: center center;
+    background-size: 100% 100%;
+    /* fill container without losing aspect ratio */
+    perspective: 200px;
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+#container div {
+    width: 50px;
+    height: 50px;
+    float: left;
+    background: #76829a;
+    transition: all 0.1s;
+    backface-visibility: visible;
+    border: 0.5px solid rgba(0, 0, 0, 0.212)
+}
+
+#container div.flip {
+    transition: all 0.5s;
+    transform: rotateY(180deg) rotateX(180deg) rotateZ(180deg);
+    opacity: 0;
+}
+
+#container div.flip-delay {
+    transition-delay: 0.01s;
+}
+
+#container div:hover {
+    box-shadow: inset 0 0 5px #fff;
+}
+
+/* GAME containers END */
+
+.loader {
+    width: 48px;
+    height: 48px;
+    background: #e0a21c;
+    display: flex;
+    margin: 20px auto;
+    position: absolute;
+    box-sizing: border-box;
+    animation: rotationBack 1s ease-in-out infinite reverse;
+    top: 0.5rem;
+    left: 2rem;
+}
+
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    transform: rotate(45deg);
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: #2e2e2e;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #e0a21cf3;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 3r;
+}
+
+@media only screen and (max-width: 600px) {
+    .stats {
+        flex-direction: column;
+    }
+}
+
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, 0.7);
+    transition: all 0.4s;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal__content {
+    border-radius: 4px;
+    position: relative;
+    width: 500px;
+    max-width: 90%;
+    background: #fff;
+    padding: 1em 2em;
+}
+
+.modal__content,
+h1 {
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.modal__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #585858;
+    text-decoration: none;
+}
+
+.modal__close:hover {
+    color: #000;
+}
+
+h2 {
+    color: white;
+    font-weight: 500;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+}
+
+h4 {
+    color: #e0a21c;
+    font-weight: 900;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0.5rem 0.5rem;
+}
+
+#fileInput {
+    transition: 0.5s ease;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        max-width: 210%;
+        margin: 0 auto;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .container .card {
+        min-width: 26rem;
+        height: 52rem;
+        padding: 50%;
+        margin: auto;
+    }
+
+    h3,
+    h2,
+    .content,
+    .game-stats {
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+
+    #container {
+        margin: 0 auto;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .container .card .box .content a {
+        justify-content: center;
+        display: inline-block;
+        margin-right: 2rem;
+        margin: 2rem 2rem;
+        padding: 1rem;
+    }
+
+    .fileInput {
+        margin-bottom: 0 auto;
+        padding: 2rem;
+    }
+
+}
+
+input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #084cdf;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+    background: #0d45a5;
+}

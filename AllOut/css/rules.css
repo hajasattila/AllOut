@@ -1,0 +1,293 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+}
+
+body {
+    min-height: 0;
+    position: relative;
+    left: 50%;
+    margin: 90px 0;
+    transform: translate(-50%, 0);
+    background-color: #1a191a;
+    max-width: 50%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    margin: 40px 0;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.container .card {
+    position: relative;
+    min-width: 30rem;
+    height: 35rem;
+    border-radius: 15px;
+    margin: 30px;
+}
+
+
+.rules h1,
+h2 {
+    color: #e0a21c;
+    text-align: center;
+}
+
+.rules h1 {
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 3px;
+    font-weight: 100;
+}
+
+.rules h2 {
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: block;
+    background-color: #1a191a;
+    margin: 0;
+    cursor: pointer;
+}
+
+.rules p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 17px;
+    line-height: 26px;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    max-height: 1200px;
+    opacity: 1;
+    transform: translate(0, 0);
+    margin-top: 14px;
+    z-index: 2;
+    text-align: justify;
+    transition: ease-in-out 1s;
+}
+
+.rules ul {
+    list-style: none;
+    perspective: 900;
+    padding: 0;
+    margin: 0;
+
+}
+
+.rules ul li {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 4px;
+    padding-top: 18px;
+    border-top: 1px solid #e0a21c;
+
+}
+
+.rules ul li:nth-of-type(1) {
+    animation-delay: 0.5s;
+}
+
+.rules ul li:nth-of-type(2) {
+    animation-delay: 0.75s;
+}
+
+.rules ul li:nth-of-type(3) {
+    animation-delay: 1s;
+}
+
+.rules ul li:last-of-type {
+    padding-bottom: 0;
+}
+
+.rules ul li i {
+    position: absolute;
+    transform: translate(-6px, 0);
+    margin-top: 16px;
+    right: 0;
+
+}
+
+.rules ul li i:before,
+ul li i:after {
+    content: "";
+    position: absolute;
+    background-color: #e0a21c;
+    width: 3px;
+    height: 9px;
+}
+
+.rules ul li i:before {
+
+    transform: translate(-2px, 0) rotate(45deg);
+}
+
+.rules ul li i:after {
+    transform: translate(2px, 0) rotate(-45deg);
+}
+
+.rules ul li input[type=checkbox] {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    opacity: 0;
+
+}
+
+.rules ul li input[type=checkbox]:checked~p {
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    transform: translate(0, 10%);
+
+}
+
+.rules ul li input[type=checkbox]:checked~i:before {
+    transform: translate(2px, 0) rotate(45deg);
+
+}
+
+.rules ul li input[type=checkbox]:checked~i:after {
+    transform: translate(-2px, 0) rotate(-45deg);
+
+}
+
+@keyframes flipdown {
+    0% {
+        opacity: 0;
+        transform-origin: top center;
+        transform: rotateX(-90deg);
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    80% {
+        transform: rotateX(8deg);
+    }
+
+    83% {
+        transform: rotateX(6deg);
+    }
+
+    92% {
+        transform: rotateX(-3deg);
+    }
+
+    100% {
+        transform-origin: top center;
+        transform: rotateX(0deg);
+    }
+}
+
+.ewlink {
+    text-decoration: none;
+    color: #44c533;
+    transition: 0.8s;
+}
+
+.ewlink:hover {
+    color: #95f189;
+}
+
+.fade-in {
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.back a {
+    position: relative;
+    display: block;
+    padding: 12px 25px;
+    background: #e0a21c;
+    margin-top: 3rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 400;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    transition: 0.8s;
+    text-align: center;
+}
+
+.back a:hover {
+    transform: scale(1.1);
+    border-radius: 2rem;
+    background: #e0a21cf3;
+    color: black;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.rulesbox {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        max-width: 200%;
+        margin: auto;
+    }
+
+    .container .card {
+        min-width: 25rem;
+        height: 45rem;
+        padding: 50%;
+        margin: auto;
+    }
+
+    .rules h1 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .rules h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .rules p {
+        font-size: 16px;
+        line-height: 24px;
+        max-height: none;
+    }
+
+    .rules ul li i {
+        margin-top: 12px;
+    }
+}
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-Out | Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+</head>
+
+<body>
+    <div class="container fade-in">
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                    <div class="mute-icon" style="float:right;">
+                        <span onclick="beat('a')"><i class="fas fa-volume-mute"></i></span>
+                    </div>
+                    <div class="loader"></div>
+
+                    <h3>All-Out</h3>
+                    <a href="#name">Start</a>
+                    <a href="rules.html">Szabályok</a>
+                    <a href="board.html">Ranglista</a>
+
+                    <audio class="audio" id="a">
+                        <source src="sounds/bg.mp3">
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="name" class="modal">
+        <div class="modal__content fade-in">
+            <h1>Játékos név</h1>
+
+            <div class="form">
+                <input class="input" placeholder="Add meg a neved!" required="" type="text">
+                <span class="input-border"></span>
+            </div>
+            <h2>Nehézség</h2>
+            <a class="backa" id="username">Kezdő</a>
+            <a class="backa" id="medium">Haladó</a>
+            <a class="backa" id="hard">Nehéz</a>
+            <a href="#" class="modal__close">&times;</a>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <i class="fas fa-exclamation-circle"></i>
+        <p class="toast-text">Túl rövid a név!</p>
+        <i class="fas fa-close" id="close"></i>
+    </div>
+
+    <script src="js/click.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/music.js"></script>
+    <script src="js/uname.js"></script>
+</body>
+
+</html>

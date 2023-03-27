@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    background: #232427;
+
+}
+
+input[type=text],
+textarea,
+input[type=email],
+input[type=password],
+input[type=tel],
+input[type=url],
+input[type=search],
+input[type=date] {
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 24px;
+    color: #555;
+    background-color: #f1f1f1;
+    border: none;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+
+}
+
+input[type=text],
+textarea,
+input[type=email],
+input[type=password],
+input[type=tel],
+input[type=url],
+input[type=search],
+input[type=date],
+.material.woocommerce-page[data-form-style="default"] input#coupon_code {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    border: none;
+
+}
+
+/* /end Codepen Specific */
+/* Ladder Navigation */
+#leaderboard {
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+
+
+}
+
+.ladder-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #e0a21c;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #e0a21c;
+    width: 65%;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.ladder-title {
+    font-size: 20px;
+    color: black !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: auto;
+}
+
+
+/* /end Ladder Navigation */
+/* Leaderboard Results */
+.leaderboard-results {
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+
+
+}
+
+.leaderboard-results thead th {
+    padding: 50px;
+    color: #747474;
+    font-size: 14px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.leaderboard-results tbody td {
+    padding: 15px 5rem;
+    background: #232427;
+    font-size: 16px;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-results tbody td:nth-of-type(7) {
+    font-weight: bold;
+}
+
+.leaderboard-results tbody tr:hover td {
+    background: #232427;
+}
+
+.leaderboard-results tbody tr {
+    color: white;
+}
+
+.leaderboard-results tbody tr:first-child {
+    color: #686EF9;
+}
+
+.leaderboard-results tbody span {
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 50%;
+}
+
+.leaderboard-results tbody tr:first-child span {
+    background: #5055CB;
+    color: white;
+}
+
+.leaderboard-results tbody tr span {
+    background: #262626;
+    color: #747474;
+}
+
+.container-wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+.fade-in {
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.back a {
+    position: relative;
+    display: block;
+    padding: 1rem 5px;
+    background: #e0a21c;
+    margin-top: 5rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 400;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    transition: 0.8s;
+    text-align: center;
+    width: 12rem;
+    justify-content: center;
+    margin: 2rem auto;
+}
+
+.back a:hover {
+    transform: scale(1.1);
+    border-radius: 2rem;
+    background: #e0a21cf3;
+    color: black;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 1200px) {
+    .container-wrap {
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .leaderboard-results thead th {
+        padding: 5px;
+    }
+}

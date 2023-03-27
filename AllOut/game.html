@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-Out | Könnyű</title>
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+</head>
+
+<body>
+    <div class="container fade-in">
+
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                    <h3>Üdvözlünk <strong><span id="username"></span></strong>!</h3>
+                    <div class="mute-icon" style="float:right;">
+                        <span onclick="beat('a')"><i class="fas fa-volume-mute"></i></span>
+                    </div>
+                    <h4>Könnyű szint!</h4>
+                    <div id="game-stats" class="stats">
+                        <div>Pont: <span id="score">0</span></div>
+                        <div>Idő: <span id="timer">0</span></div>
+                        <div>Lépés: <span id="counter">0</span></div>
+                    </div>
+
+                    <h2>Saját kép: (opcionális)</h2>
+                    <input type="file" id="fileInput">
+
+                    <div class="loader"></div>
+                    <div id="container"></div>
+
+                    <a href="game.html">Restart</a>
+                    <a href="index.html">Vissza</a>
+
+                    <audio class="audio" id="a">
+                        <source src="sounds/bg.mp3">
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/click.js"></script>
+    <script src="js/picture.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/unamewrite.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/music.js"></script>
+</body>
+
+</html>
