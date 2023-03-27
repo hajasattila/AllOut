@@ -8,7 +8,7 @@ class App {
         this.stepCounter = 0;
         this.score = 0;
         this.startTime = null;
-        this.timerInterval = null;
+        this.timerInterval = null;  
         this.won = false;
         for (let r = 0; r < size; r++) {
             for (let c = 0; c < size; c++) {
@@ -89,13 +89,15 @@ class App {
             const uname = localStorage.getItem('uname');
             const elapsedSeconds = Math.round((new Date() - this.startTime) / 1000);
             const datum = Date();
+            const lvl = "Könnyű";
             clearInterval(this.timerInterval);
             const gameResult = {
                 username: uname,
                 time: elapsedSeconds,
                 step: this.stepCounter,
                 score: this.score,
-                date: datum
+                date: datum,
+                lvl: lvl
             };
             let gameResults = JSON.parse(localStorage.getItem('gameResults')) || [];
 

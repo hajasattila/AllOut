@@ -5,40 +5,86 @@ const leaderboardTbody = leaderboardTable.querySelector('tbody');
 // Retrieve the game results from localStorage
 const gameResults = JSON.parse(localStorage.getItem('gameResults')) || [];
 
-// Sort the game results by score (descending) and time (ascending)
-gameResults.sort((a, b) => {
-    if (a.score === b.score) {
-        return b.time - a.time;
+// Create a function to sort the game results by a given column and update the leaderboard table
+const sortByColumn = (columnName) => {
+    let sortFunction;
+    switch (columnName) {
+        case 'Pont':
+            sortFunction = (a, b) => {
+                if (a.score === b.score) {
+                    return b.time - a.time;
+                }
+                return a.score - b.score;
+            };
+            break;
+        case 'Idő':
+            sortFunction = (a, b) => {
+                if (a.time === b.time) {
+                    return b.score - a.score;
+                }
+                return a.time - b.time;
+            };
+            break;
+        case 'Lépés':
+            sortFunction = (a, b) => {
+                if (a.step === b.step) {
+                    return b.score - a.score;
+                }
+                return a.step - b.step;
+            };
+            break;
+        case 'Dátum':
+            sortFunction = (a, b) => {
+                return new Date(a.date) - new Date(b.date);
+            };
+            break;
+        default:
+            sortFunction = (a, b) => {
+                return a.username.localeCompare(b.username);
+            };
+            break;
     }
-    return a.score - b.score;
+    gameResults.sort(sortFunction);
+    renderLeaderboard();
+};
+
+// Add click event listeners to all header cells that call the sortByColumn function with the appropriate column name
+const headers = document.querySelectorAll('th');
+headers.forEach((header) => {
+    header.addEventListener('click', () => {
+        const columnName = header.textContent.trim();
+        sortByColumn(columnName);
+    });
 });
 
-// Clear the leaderboard table
-leaderboardTbody.innerHTML = '';
+// Create a function to render the leaderboard table based on the game results
+const renderLeaderboard = () => {
+    leaderboardTbody.innerHTML = '';
+    gameResults.forEach((result) => {
+        const row = document.createElement('tr');
+        const nameCell = document.createElement('td');
+        nameCell.textContent = result.username;
+        row.appendChild(nameCell);
 
-// Iterate over the game results and add them to the leaderboard table
-gameResults.forEach((result) => {
-    const row = document.createElement('tr');
+        const scoreCell = document.createElement('td');
+        scoreCell.textContent = result.score;
+        row.appendChild(scoreCell);
 
-    const nameCell = document.createElement('td');
-    nameCell.textContent = result.username;
-    row.appendChild(nameCell);
+        const timeCell = document.createElement('td');
+        timeCell.textContent = result.time;
+        row.appendChild(timeCell);
 
-    const scoreCell = document.createElement('td');
-    scoreCell.textContent = result.score;
-    row.appendChild(scoreCell);
+        const stepCell = document.createElement('td');
+        stepCell.textContent = result.step;
+        row.appendChild(stepCell);
 
-    const timeCell = document.createElement('td');
-    timeCell.textContent = result.time;
-    row.appendChild(timeCell);
+        const dateCell = document.createElement('td');
+        dateCell.textContent = new Date(result.date).toLocaleDateString();
+        row.appendChild(dateCell);
 
-    const stepCell = document.createElement('td');
-    stepCell.textContent = result.step;
-    row.appendChild(stepCell);
+        leaderboardTbody.appendChild(row);
+    });
+};
 
-    const dateCell = document.createElement('td');
-    dateCell.textContent = new Date(result.date).toLocaleDateString();
-    row.appendChild(dateCell);
-
-    leaderboardTbody.appendChild(row);
-});
+// Call the renderLeaderboard function to initially render the leaderboard table
+renderLeaderboard();

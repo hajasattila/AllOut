@@ -75,12 +75,14 @@ input[type=date],
 }
 
 .ladder-title {
-    font-size: 20px;
+    font-size: 1.5rem;
     color: black !important;
-    font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     padding: auto;
+    font-weight: 900;
+    text-shadow: 0 0 5px #442f06, 0 0 15px #442f06, 0 0 20px #442f06,
+        0 0 40px #442f06, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
 }
 
 
@@ -90,26 +92,23 @@ input[type=date],
     text-align: left;
     border-collapse: collapse;
     width: 100%;
-    justify-content: center;
-    text-align: center;
     display: flex;
-
-
+    flex-direction: column;
+    align-items: center;
 }
 
 .leaderboard-results thead th {
-    padding: 50px;
+    padding: 2rem;
     color: #747474;
-    font-size: 14px;
-    font-weight: bold;
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .leaderboard-results tbody td {
-    padding: 15px 5rem;
-    background: #232427;
-    font-size: 16px;
+    padding: 1.5rem;
+    font-size: 1.2rem;
     border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .leaderboard-results tbody td:nth-of-type(7) {
@@ -130,7 +129,7 @@ input[type=date],
 
 .leaderboard-results tbody span {
     font-weight: bold;
-    padding: 10px 15px;
+    padding: 0.8rem 1.2rem;
     border-radius: 50%;
 }
 
@@ -142,6 +141,15 @@ input[type=date],
 .leaderboard-results tbody tr span {
     background: #262626;
     color: #747474;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .leaderboard-results thead th,
+    .leaderboard-results tbody td {
+        padding: 1rem;
+        font-size: 1rem;
+    }
 }
 
 .container-wrap {
@@ -205,4 +213,67 @@ input[type=date],
     .leaderboard-results thead th {
         padding: 5px;
     }
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-container th {
+    transition: all 0.5s;
+}
+
+.table-container th:hover {
+    color: #e0a21cf3;
+    text-decoration: underline;
+}
+
+.table-container table {
+    width: 30rem;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.table-container th,
+.table-container td {
+    padding: 0.1rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+.table-container th {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 900;
+}
+
+.table-container .leaderboard-results tbody td {
+    background: #232427;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .table-container th,
+    .table-container td {
+        padding: 0.1rem;
+    }
+
+    .table-container table {
+        width: 22rem;
+    }
+}
+
+.back h1 {
+    color: white;
+    font-size: 2rem;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+
 }

@@ -92,13 +92,15 @@ class App {
             const uname = localStorage.getItem('uname');
             const elapsedSeconds = Math.round((new Date() - this.startTime) / 1000);
             const datum = Date();
+            const lvl = "medium";
             clearInterval(this.timerInterval);
             const gameResult = {
                 username: uname,
                 time: elapsedSeconds,
                 step: this.stepCounter,
                 score: this.score,
-                date: datum
+                date: datum,
+                lvl: lvl
             };
             let gameResults = JSON.parse(localStorage.getItem('gameResults')) || [];
 
