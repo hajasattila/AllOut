@@ -121,7 +121,7 @@ class App {
 
             localStorage.setItem('gameResults', JSON.stringify(gameResults));
             setTimeout(() => {
-                alert(`Gratulálok!\n ${elapsedSeconds} másodperc alatt nyertél, ${this.stepCounter} lépéssel és ${this.score} ponttal!`);
+                alert(`Gratulálok!\n${elapsedSeconds} másodperc alatt,\n${this.stepCounter} lépéssel,\n${this.score} ponttal nyertél!`);
                 window.location.href = "board.html";
             }, 1);
         }

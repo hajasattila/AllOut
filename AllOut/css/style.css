@@ -209,7 +209,7 @@ input:focus~.input-border {
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1500px) {
     .container {
         max-width: 200%;
         margin: auto;
@@ -394,7 +394,7 @@ input:focus~.input-border {
 
 @keyframes rotationBack {
     0% {
-        transform: rotate(0deg);    
+        transform: rotate(0deg);
     }
 
     100% {
@@ -480,8 +480,96 @@ input:focus~.input-border {
 .toast i:last-child:hover {
     color: #333;
 }
-h2{
+
+h2 {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
+@media (min-width: 1024px) {
+
+    /* Átméretezett konténer */
+    .container {
+        max-width: 1200px;
+        margin: 40px auto;
+    }
+
+    .container .card {
+        min-width: 25rem;
+        height: 30rem;
+        margin: 20px;
+    }
+
+    .container .card .box {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .container .card .box .content p {
+        font-size: 16px;
+    }
+
+    .container .card .box .content h3 {
+        font-size: 3rem;
+    }
+}
+
+/* Kisebb kijelzők (pl. tablet) */
+@media (max-width: 1023px) {
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+    .container .card {
+        min-width: 20rem;
+        height: 25rem;
+        margin: 10px;
+    }
+
+    .container .card .box {
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+    }
+
+    .container .card .box .content p {
+        font-size: 14px;
+    }
+
+    .container .card .box .content h3 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Mobiltelefonok és kisebb kijelzők */
+@media (max-width: 767px) {
+    .container {
+        max-width: 500px;
+        margin: 10px auto;
+    }
+
+    .container .card {
+        min-width: 20rem;
+        height: 25rem;
+        margin: 5px;
+    }
+
+    .container .card .box {
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+    }
+
+    .container .card .box .content p {
+        font-size: 12px;
+    }
+
+    .container .card .box .content h3 {
+        font-size: 2rem;
+    }
+}

@@ -17,20 +17,6 @@ body {
     background-color: #1a191a;
 }
 
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 /* CONTAINER START */
 .container {
     display: flex;
@@ -38,15 +24,17 @@ body {
     align-items: center;
     flex-wrap: wrap;
     max-width: 1600px;
-    margin: auto
+    margin: 0 auto
 }
 
 .container .card {
     position: relative;
     min-width: 45rem;
-    height: 55rem;
+    height: 57rem;
     border-radius: 15px;
     margin: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 .container .card .box {
@@ -97,7 +85,7 @@ body {
     display: block;
     padding: 12px 0.1px;
     background: #e0a21c;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     text-decoration: none;
     border-radius: 0.5rem;
     font-weight: 400;
@@ -246,7 +234,7 @@ input:focus~.input-border {
     background-size: 100% 100%;
     /* fill container without losing aspect ratio */
     perspective: 200px;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     justify-content: center;
 }
 
@@ -418,10 +406,10 @@ h4 {
     font-weight: 500;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1800px) {
     .container {
         max-width: 210%;
-        margin: 0 auto;
+        margin: auto;
         justify-content: center;
         text-align: center;
     }
@@ -430,7 +418,7 @@ h4 {
         min-width: 26rem;
         height: 52rem;
         padding: 50%;
-        margin: auto;
+        
     }
 
     h3,
@@ -445,7 +433,9 @@ h4 {
         margin: 0 auto;
         justify-content: center;
         text-align: center;
+        margin-top: 1.5rem;
     }
+
 
     .container .card .box .content a {
         justify-content: center;
@@ -455,10 +445,6 @@ h4 {
         padding: 1rem;
     }
 
-    .fileInput {
-        margin-bottom: 0 auto;
-        padding: 2rem;
-    }
 
 }
 
@@ -475,4 +461,18 @@ input[type=file]::file-selector-button {
 
 input[type=file]::file-selector-button:hover {
     background: #0d45a5;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
