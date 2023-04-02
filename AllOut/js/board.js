@@ -7,7 +7,7 @@ const empty = document.getElementById('ures');
 const gameResults = JSON.parse(localStorage.getItem('gameResults')) || [];
 // Check if gameResults is empty, if so display a message
 if (gameResults.length === 0) {
-    empty.innerHTML = 'Nincs még adat rögzítve!😢';
+    empty.textContent = 'Nincsenek még adatok rögzítve!';
 }
 
 // Create a function to sort the game results by a given column and update the leaderboard table
@@ -19,7 +19,7 @@ const sortByColumn = (columnName) => {
                 if (a.score === b.score) {
                     return b.time - a.time;
                 }
-                return a.score - b.score;
+                return b.score - a.score;
             };
             break;
         case 'Idő':
@@ -45,14 +45,13 @@ const sortByColumn = (columnName) => {
             break;
         default:
             sortFunction = (a, b) => {
-                return a.username.localeCompare(b.username);
+                return a.time.localeCompare(b.score);
             };
             break;
     }
-    gameResults.sort(sortFunction);
+    gameResults.sort(sortFunction)
     renderLeaderboard();
 };
-
 // Add click event listeners to all header cells that call the sortByColumn function with the appropriate column name
 const headers = document.querySelectorAll('th');
 headers.forEach((header) => {
@@ -61,9 +60,8 @@ headers.forEach((header) => {
         sortByColumn(columnName);
     });
 });
-
 // Create a function to render the leaderboard table based on the game results
-const renderLeaderboard = (searchText) => {
+const renderLeaderboard = (searchText = '') => {
     leaderboardTbody.innerHTML = '';
     gameResults.forEach((result) => {
         if (result.username.toLowerCase().includes(searchText.toLowerCase())) {
@@ -71,7 +69,6 @@ const renderLeaderboard = (searchText) => {
             const nameCell = document.createElement('td');
             nameCell.textContent = result.username;
             row.appendChild(nameCell);
-
             const scoreCell = document.createElement('td');
             scoreCell.textContent = result.score;
             row.appendChild(scoreCell);
@@ -92,9 +89,8 @@ const renderLeaderboard = (searchText) => {
         }
     });
 };
-
 // Call the renderLeaderboard function to initially render the leaderboard table
-renderLeaderboard('');
+renderLeaderboard();
 
 // Add an input event listener to the search input element to dynamically update the leaderboard table based on the search text
 const searchInput = document.getElementById('search');
