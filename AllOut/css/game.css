@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'VT323', monospace;
-    overflow: hidden;
 }
 
 body {
@@ -64,7 +63,7 @@ body {
     color: white;
     font-size: 12px;
     z-index: 1;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .container .card .box .content h3 {
@@ -74,6 +73,8 @@ body {
     z-index: 1;
     transition: 0.5s;
     font-weight: 900;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .container .card:hover .box .content h3 {
@@ -85,7 +86,7 @@ body {
     display: block;
     padding: 12px 0.1px;
     background: #e0a21c;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     text-decoration: none;
     border-radius: 0.5rem;
     font-weight: 400;
@@ -213,7 +214,7 @@ input:focus~.input-border {
     width: 35%;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .backa:hover {
@@ -232,9 +233,8 @@ input:focus~.input-border {
     margin: 0 auto;
     background-position: center center;
     background-size: 100% 100%;
-    /* fill container without losing aspect ratio */
     perspective: 200px;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     justify-content: center;
 }
 
@@ -242,7 +242,7 @@ input:focus~.input-border {
     width: 50px;
     height: 50px;
     float: left;
-    background: #76829a;
+    background: #566075ed;
     transition: all 0.1s;
     backface-visibility: visible;
     border: 0.5px solid rgba(0, 0, 0, 0.212)
@@ -321,7 +321,7 @@ input:focus~.input-border {
     color: white;
     font-weight: 700;
     font-size: 1.2rem;
-    margin-top: 3r;
+    margin-top: 1rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -394,69 +394,83 @@ h4 {
     justify-content: center;
     text-align: center;
     margin: 0 auto;
-    padding: 0.5rem 0.5rem;
+    padding: 0.2rem 0.2rem;
 }
 
 #fileInput {
     transition: 0.5s ease;
-    margin: 0 auto;
     text-align: center;
     justify-content: center;
     color: white;
     font-weight: 500;
 }
 
-@media only screen and (max-width: 1800px) {
+@media only screen and (max-width: 1700px) {
     .container {
-        max-width: 210%;
+        width: 100%;
+        max-width: 500px;
         margin: auto;
         justify-content: center;
         text-align: center;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .container .card .box .content h3 {
+        margin-top: 1rem;
+        font-size: 1.5rem;
     }
 
     .container .card {
-        min-width: 26rem;
-        height: 52rem;
-        padding: 50%;
-        
-    }
-
-    h3,
-    h2,
-    .content,
-    .game-stats {
-        font-size: 1rem;
-        margin: 0 auto;
+        width: 50%;
+        max-width: 50%;
+        height: auto;
+        padding: 25rem;
     }
 
     #container {
         margin: 0 auto;
         justify-content: center;
         text-align: center;
-        margin-top: 1.5rem;
+        margin-top: 0.3rem;
     }
-
 
     .container .card .box .content a {
         justify-content: center;
         display: inline-block;
         margin-right: 2rem;
-        margin: 2rem 2rem;
+        margin: 1rem 1rem;
         padding: 1rem;
     }
 
+    .mute-icon {
+        position: absolute;
+        top: 2rem;
+        right: 13rem;
+    }
 
+
+    .loader {
+        position: absolute;
+        top: 0.5rem;
+        left: 13rem;
+    }
 }
 
 input[type=file]::file-selector-button {
     margin-right: 20px;
     border: none;
     background: #084cdf;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 10px;
     color: #fff;
     cursor: pointer;
     transition: 0.5s ease-in-out;
+    margin-bottom: 1rem;
 }
 
 input[type=file]::file-selector-button:hover {
