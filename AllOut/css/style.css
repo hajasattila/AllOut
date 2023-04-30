@@ -486,7 +486,7 @@ h2 {
     margin-bottom: 2rem;
 }
 
-.button {
+/* .button {
     margin-top: 2rem;
     position: relative;
     display: inline-block;
@@ -531,7 +531,7 @@ h2 {
     background-color: #2a2b2f;
     padding: 13px 20px;
     border-radius: 3px;
-}
+} */
 
 @keyframes animate_border {
     to {
@@ -577,9 +577,9 @@ h2 {
         margin: 20px auto;
     }
 
-    .button {
+    /* .button {
         margin-top: 0.8rem;
-    }
+    } */
 
     .container .card {
         min-width: 20rem;
